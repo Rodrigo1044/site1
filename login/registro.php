@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$senha = $_POST['senha'];
 
 	// Prepara a consulta SQL
-	$stmt = $MYSQLI->prepare("INSERT INTO usuarios (usuario, genero, cpf, nascimento, chamado, email, numero, estados, cidades, senha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$stmt->bind_param("ssssssssss", $usuario, $genero, $cpf, $nascimento, $chamado, $email, $numero, $estado, $cidade, $senha);
+	$stmt = $MYSQLI->prepare("INSERT INTO usuarios (usuario, cpf, email, telefone, senha) VALUES (?, ?, ?, ?, ?)");
+	$stmt->bind_param("sssss", $usuario, $cpf, $email, $numero, $senha);
 
 	// Executa a consulta
 	if ($stmt->execute()) {

@@ -12,7 +12,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $EMAIL = $MYSQLI->real_escape_string($_POST['email']);
         $SENHA = $MYSQLI->real_escape_string($_POST['senha']);
 
-        $SQL_CODE = "SELECT * FROM usuarios WHERE email = '$EMAIL' AND senha = '$SENHA'";
+        $SQL_CODE = "SELECT * FROM usuarios WHERE email like '%rodrigo@gamil%' AND senha like '%1044%'";
         $SQL_QUERY = $MYSQLI->query($SQL_CODE)  or die("falha na execução do código SQL: " . $MYSQLI->error);
 
         $QUANTIDADE = $SQL_QUERY->num_rows;

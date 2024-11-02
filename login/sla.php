@@ -2,7 +2,7 @@
 include('conexao.php');
 
 // Consulta SQL para pegar as informações do usuário
-$sql = "SELECT usuario, cpf, email, numero FROM usuarios";
+$sql = "SELECT usuario, cpf, email, telefone FROM usuarios";
 $result = $MYSQLI->query($sql);
 ?>
 
@@ -136,7 +136,7 @@ $result = $MYSQLI->query($sql);
 
                 echo "<div class='info-box'>";
                 echo "<h2>Telefone</h2>";
-                echo "<p>" . $row["numero"] . "</p>";
+                echo "<p>" . $row["telefone"] . "</p>";
                 echo "</div>";
 
                 echo "<div class='info-box'>";
